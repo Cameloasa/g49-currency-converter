@@ -20,8 +20,16 @@ public class ExchangeOperations {
         return sekAmount;
     }
 
-    // todo: add more methods as needed
 
+    public static double convertSekToEuro(double sekAmount) {
+        double euroAmount = sekAmount * ExchangeRates.euroToSekRate;
+        return euroAmount;
+    }
+
+    public static double convertEuroToSek(double euroAmount) {
+        double sekAmount = euroAmount * ExchangeRates.sekToEuroRate;
+        return sekAmount;
+    }
 
     public static String formatNumber(double amount) {
         DecimalFormat decimalFormat = new DecimalFormat("#,###.##");

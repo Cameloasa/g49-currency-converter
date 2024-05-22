@@ -48,7 +48,7 @@ public class ExchangeApp {
 
     private static void performOperations(int choice) {
         Scanner scanner = new Scanner(System.in);
-        double sekAmount, usdAmount;
+        double sekAmount, usdAmount, euroAmount;
         switch (choice) {
             case 1:
                 sekAmount = getAmount("SEK");
@@ -61,10 +61,14 @@ public class ExchangeApp {
                 printConversionResult(usdAmount, sekAmount, "USD", "SEK");
                 break;
             case 3:
-                //todo: call convertSekToEuro method
+                sekAmount = getAmount("SEK");
+                euroAmount = ExchangeOperations.convertSekToEuro(sekAmount);
+                printConversionResult(sekAmount, euroAmount, "SEK", "Euro");
                 break;
             case 4:
-                //todo: call convertEuroToSek method
+                euroAmount = getAmount("Euro");
+                sekAmount = ExchangeOperations.convertEuroToSek(euroAmount);
+                printConversionResult(euroAmount, sekAmount, "Euro", "SEK");
                 break;
             case 0:
                 System.out.println("Exiting the currency converter app. Goodbye!");
